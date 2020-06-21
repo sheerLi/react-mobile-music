@@ -1,4 +1,5 @@
-# 
+# 基于 react 开发的高仿网易云音乐移动版本
 
-## 本地开发
-yarn start 会使用代理转发，到 server/index.js 中修改，或者设置环境变量 NODE_ENV_API
+## 项目运行
+yarn / npm install 安装依赖
+yarn start / npm run start 命令
