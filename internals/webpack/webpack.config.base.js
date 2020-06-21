@@ -152,7 +152,6 @@ module.exports = options => {
     plugins: options.plugins.concat([
       new webpack.EnvironmentPlugin({
         NODE_ENV_STAGE: process.env.NODE_ENV_STAGE,
-        NODE_ENV_API: process.env.NODE_ENV_API,
         BUILD_ID: new Date().toLocaleString(),
       }),
       new ProgressBarPlugin(),

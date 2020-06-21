@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "npm run clean && cross-env  NODE_ENV_STAGE=${PROJECT_ENV} NODE_ENV_API=${NODE_ENV_API} ESLINT=false webpack --config internals/webpack/webpack.config.prod.js --color -p --progress --hide-modules --display-optimization-bailout",
-    "build:nolint": "npm run clean && cross-env STAGE=${PROJECT_ENV} NODE_ENV=production ESLINT=false webpack --config internals/webpack/webpack.config.prod.js --color -p --progress --hide-modules --display-optimization-bailout",
+    "build": "npm run clean && cross-env NODE_ENV=production ESLINT=false webpack --config internals/webpack/webpack.config.prod.js --color -p --progress --hide-modules --display-optimization-bailout",
+    "build:nolint": "npm run clean && cross-env NODE_ENV=production ESLINT=false webpack --config internals/webpack/webpack.config.prod.js --color -p --progress --hide-modules --display-optimization-bailout",
     "docker-prod:build": "docker-compose -f ./docker/docker-compose.yml build",
     "docker-prod:start": "docker-compose -f ./docker/docker-compose.yml up",
     "docker-prod:stop": "docker-compose -f ./docker/docker-compose.yml stop",
@@ -15,7 +15,6 @@
     "start:lint": "cross-env STAGE=develop NODE_ENV=development ESLINT=true node server --proxy",
     "start:production": "npm run build && npm run start:prod",
     "start:prod": "cross-env STAGE=release NODE_ENV=production node server",
-    "start:mock": "cross-env STAGE=develop NODE_ENV=development babel-node server --presets @babel/env --mock",
     "start:noproxy": "cross-env STAGE=develop NODE_ENV=development node server",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",

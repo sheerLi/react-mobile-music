@@ -12,7 +12,7 @@ const { resolve, join } = require('path');
 
 const app = express();
 
-const proxyUrl = process.env.NODE_ENV_API || 'http://dev.jiayouxueba.cn';
+const proxyUrl = '//47.106.228.198:3000/api';
 const proxyOptions = {
   target: proxyUrl,
   changeOrigin: true,
