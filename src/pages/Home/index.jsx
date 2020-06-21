@@ -1,19 +1,30 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 
-import { Button } from '@/components';
+import { Tab } from '@/components';
+import { TABS } from '@/constants/data';
 
 class Home extends PureComponent {
+  state = {
+    tab: 1,
+  };
+
+  handleTabChange = value => {
+    this.setState({
+      tab: value,
+    });
+  };
+
   render() {
+    const { tab } = this.state;
     return (
-      <div>
-        <Button>确认</Button>
-      </div>
+      <>
+        <Tab data={TABS} value={tab} onChange={this.handleTabChange} />
+      </>
     );
   }
 }
 
-const mapState = state => ({ student: state.student });
 const mapDispatch = dispatch => ({ dispatch });
 
-export default connect(mapState, mapDispatch)(Home);
+export default connect(null, mapDispatch)(Home);
