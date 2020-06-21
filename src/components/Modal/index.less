@@ -1,0 +1,139 @@
+:global {
+  .auto .rmc-dialog-content {
+    width: auto;
+  }
+  .rmc-dialog-content {
+    position: relative;
+    width: 540px;
+    .rmc-dialog-close {
+      position: absolute;
+      top: 15px;
+      right: 0;
+      text-shadow: none;
+      opacity: 1;
+    }
+    .rmc-dialog-close-x {
+      display: block;
+      width: 20px;
+      height: 20px;
+      text-shadow: none;
+      background: url(~@/assets/close-icon.png) 0 0 ~'/' 100% 100% no-repeat;
+      opacity: 1;
+      &::after {
+        content: none;
+      }
+    }
+  }
+  .rmc-dialog-title {
+    margin: 0;
+    color: rgb(0, 0, 0);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1;
+    text-align: center;
+    border: 0;
+  }
+  .rmc-dialog-body {
+    padding: 15px;
+    font-size: 16px;
+  }
+  .rmc-dialog-footer {
+    padding: 0;
+    border: 0;
+  }
+
+  .modal--centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal__button-group--normal {
+    position: relative;
+    display: flex;
+    & .modal__button {
+      display: block;
+      flex: 1 1 0%;
+      box-sizing: border-box;
+      width: auto;
+      height: 80px;
+      overflow: hidden;
+      color: rgb(16, 142, 233);
+      font-size: 36px;
+      line-height: 80px;
+      white-space: nowrap;
+      text-align: center;
+      text-decoration: none;
+      text-overflow: ellipsis;
+      outline: none;
+      cursor: pointer;
+    }
+  }
+
+  .modal__button-group--h {
+    & .modal__button:first-child {
+      color: rgb(0, 0, 0);
+    }
+    & .modal__button:last-child {
+      position: relative;
+    }
+  }
+
+  @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    .rmc-dialog-header {
+      position: relative;
+      border-bottom: none;
+      &::after {
+        position: absolute;
+        top: auto;
+        right: auto;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: rgb(221, 221, 221);
+        transform: scaleY(0.5);
+        transform-origin: 50% 0;
+        content: '';
+      }
+    }
+    .modal__button-group--h {
+      border-top: none;
+      &::before {
+        position: absolute;
+        top: 0;
+        right: auto;
+        bottom: auto;
+        left: 0;
+        z-index: 1;
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: rgb(221, 221, 221);
+        transform: scaleY(0.5);
+        transform-origin: 50% 50%;
+        content: '';
+      }
+      & .modal__button:last-child {
+        border-left: none;
+        &::before {
+          position: absolute;
+          top: 0;
+          right: auto;
+          bottom: auto;
+          left: 0;
+          z-index: 1;
+          display: block;
+          width: 1px;
+          height: 100%;
+          background-color: rgb(221, 221, 221);
+          transform: scaleX(0.5);
+          transform-origin: 100% 50%;
+          content: '';
+        }
+      }
+    }
+  }
+}

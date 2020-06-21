@@ -1,0 +1,5 @@
+# 忽略代码格式化校验
+
+**/*.svg
+package.json
+libs/

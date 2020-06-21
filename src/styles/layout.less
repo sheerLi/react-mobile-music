@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+.flex(@direction: column; @inline: block) when (@inline = block) {
+  display: flex;
+}
+
+.flex(@direction: column; @inline: block) when not (@inline = block) {
+  display: inline-flex;
+}
+
+.flex(@direction: column; @inline: block) {
+  flex-direction: @direction;
+  flex-wrap: wrap;
+}
