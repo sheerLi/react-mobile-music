@@ -1,3 +1,4 @@
 import global from '@/models/global';
+import home from '@/models/home';
 
-export { global };
+export { global, home };

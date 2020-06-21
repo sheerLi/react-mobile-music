@@ -25,8 +25,8 @@ export default class AppService {
   static addDefaultResponseInterceptor = () => {
     Axios.addResponseInterceptor(
       response => {
-        if (response.data.code === 0) {
-          return response.data.data;
+        if (response.data.code === 200) {
+          return response.data;
         }
 
         const msg = response.data.msg || '未知错误';

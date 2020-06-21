@@ -1,3 +1,4 @@
 import AppService from './app';
+import HomeService from './home';
 
-export { AppService };
+export { AppService, HomeService };
